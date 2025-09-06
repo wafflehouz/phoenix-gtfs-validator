@@ -1,10 +1,10 @@
-# Phoenix GTFS Validator
+# GTFS Validator
 
-A Python toolkit for analyzing Phoenix Valley Metro's publicly available GTFS (General Transit Feed Specification) data to reverse engineer transit timetables and validate trip planning information.
+A Python toolkit for analyzing publicly available GTFS (General Transit Feed Specification) data to reverse engineer transit timetables and validate trip planning information.
 
 ## Purpose
 
-This project transforms raw GTFS data from Phoenix Valley Metro into structured timetables that can be used to:
+This project transforms raw GTFS data from a transit agency into structured timetables that can be used to:
 - **Validate trip planning times** posted on Google Maps, Apple Maps, and other third-party applications
 - **Analyze transit service patterns** across different days of the week
 - **Extract detailed trip information** for specific routes
@@ -22,12 +22,12 @@ The toolkit generates comprehensive CSV files containing:
 
 ### Prerequisites
 - Python 3.9+
-- Phoenix Valley Metro GTFS feed (download from [Valley Metro's GTFS page](https://www.valleymetro.org/gtfs))
+- A GTFS feed from a transit agency (e.g., found on [Transitland](https://www.transit.land/))
 
 ### 1. Clone and Setup
 ```bash
 git clone <repository-url>
-cd phoenix-gtfs-validator
+cd gtfs-validator
 python3 -m venv .venv
 source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 python -m pip install --upgrade pip
@@ -35,7 +35,7 @@ pip install -r requirements.txt
 ```
 
 ### 2. Add GTFS Data
-- Download the latest GTFS feed from Valley Metro
+- Download a GTFS feed from a transit agency
 - Extract the contents to a `googletransit/` directory in the project root
 - The directory should contain files like `stops.txt`, `trips.txt`, `routes.txt`, etc.
 
@@ -90,7 +90,7 @@ cut -d, -f1 googletransit/routes.txt | tail -n +2 | sort -u | head -n 20
 ## Updating Data
 
 To use a newer GTFS feed:
-1. Download the latest feed from Valley Metro
+1. Download the latest feed from a transit agency
 2. Replace the `googletransit/` directory
 3. Re-run the scripts
 
@@ -107,7 +107,7 @@ This GTFS analysis toolkit is part of a broader transit data validation system. 
 
 ## Contributing
 
-This project uses publicly available Phoenix Valley Metro data. Contributions are welcome for:
+This project uses publicly available GTFS data. Contributions are welcome for:
 - Additional analysis scripts
 - Data validation improvements
 - Documentation enhancements
@@ -115,10 +115,10 @@ This project uses publicly available Phoenix Valley Metro data. Contributions ar
 
 ## License
 
-This project is open source. The GTFS data is provided by City of Phoenix - Valley Metro under their terms of use.
+This project is open source. The GTFS data is provided by the respective transit agency under their terms of use.
 
 ## Data Source
 
-- **GTFS Feed**: [Phoenix - Valley Metro Bus Schedule](https://phoenixopendata.com/dataset/valley-metro-bus-schedule)
+- **GTFS Feeds**: [Transitland](https://www.transit.land/)
 - **Data Format**: [GTFS Specification](https://gtfs.org/)
 

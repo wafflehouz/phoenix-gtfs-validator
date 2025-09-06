@@ -1,31 +1,37 @@
-# Valley Metro GTFS-RT Feed URLs
+# Sample GTFS-RT Feed URLs
 
-This document contains the URLs for accessing Valley Metro's GTFS-RT (Real-Time) feeds. These feeds provide real-time information about vehicle locations, service alerts, and trip updates.
+This document provides examples of what GTFS-RT (Real-Time) feed URLs might look like. These feeds provide real-time information about vehicle locations, service alerts, and trip updates.
 
 ## Feed Endpoints
 
-### Vehicle Locations
-Provides real-time vehicle position data for all active vehicles in the Valley Metro system.
+GTFS-RT feeds are typically provided by transit agencies and expose real-time data through a set of URLs. The exact structure of these URLs will vary by provider, but they generally follow a similar pattern.
 
+### Vehicle Locations
+Provides real-time vehicle position data for all active vehicles in the system.
+
+**Example URL:**
 ```
-https://mna.mecatran.com/utw/ws/gtfsfeed/vehicles/valleymetro?apiKey=4f22263f69671d7f49726c3011333e527368211f&asJson=true
+https://api.transitagency.com/gtfs-rt/vehicles
 ```
 
 ### Service Alerts
-Provides real-time service alerts and disruptions affecting Valley Metro services.
+Provides real-time service alerts and disruptions affecting services.
 
+**Example URL:**
 ```
-https://mna.mecatran.com/utw/ws/gtfsfeed/alerts/valleymetro?apiKey=4f22263f69671d7f49726c3011333e527368211f&asJson=true
+https://api.transitagency.com/gtfs-rt/alerts
 ```
 
 ### Trip Updates
 Provides real-time updates about trip progress, delays, and schedule changes.
 
+**Example URL:**
 ```
-https://mna.mecatran.com/utw/ws/gtfsfeed/realtime/valleymetro?apiKey=4f22263f69671d7f49726c3011333e527368211f&asJson=true
+https://api.transitagency.com/gtfs-rt/trip-updates
 ```
 
 ## Notes
-- All feeds are provided in JSON format (asJson=true)
-- API key is required for access
-- Feeds are updated in real-time
+- Feeds may be available in different formats (e.g., JSON, Protocol Buffers).
+- Access may require an API key.
+- Feeds are typically updated in real-time or at frequent intervals.
+- Consult the specific transit agency's developer documentation for the correct URLs and access details.
